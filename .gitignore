@@ -1,0 +1,9 @@
+./wechat/Page/Conf/*
+./wechat/Acenter/Conf/*
+./wechat/Cli/Conf/*
+./wechat/Common/Conf/*
+./wechat/Script/Conf/*
+./wechat/Server/Conf/*
+./wechat/Ucenter/Conf/*
+./ThinkPHP/*
+./Runtime/*#
