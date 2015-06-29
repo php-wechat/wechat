@@ -1,7 +1,7 @@
 <?php
 namespace Server\Controller;
 use Think\Controller;
-class SystemController extends Controller {
+class CommonController extends Controller {
 
    public function index()
    {

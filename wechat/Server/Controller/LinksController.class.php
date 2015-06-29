@@ -1,14 +1,14 @@
 <?php
 namespace Server\Controller;
 use Think\Controller;
-class SystemController extends Controller {
+class LinksController extends Controller {
 
    public function index()
    {
 	$this->display();
    }
 
-    public function menu()
+    public function add()
     {
         $this->display();
     }
