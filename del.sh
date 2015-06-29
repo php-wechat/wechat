@@ -1,12 +1,12 @@
 #!/bin/bash
 
-	rm -rf  $1wechat/Page/Conf/
-	rm -rf  $1wechat/Acenter/Conf/
-	rm -rf  $1wechat/Cli/Conf/
-	rm -rf  $1wechat/Common/Conf/
-	rm -rf  $1wechat/Script/Conf/
-	rm -rf  $1wechat/Server/Conf/
-	rm -rf  $1wechat/Ucenter/Conf/
+	rm -rf  $(pwd)/wechat/Page/Conf/
+	rm -rf  $(pwd)/wechat/Acenter/Conf/
+	rm -rf  $(pwd)/wechat/Cli/Conf/
+	rm -rf  $(pwd)/wechat/Common/Conf/
+	rm -rf  $(pwd)/wechat/Script/Conf/
+	rm -rf  $(pwd)/wechat/Server/Conf/
+	rm -rf  $(pwd)/wechat/Ucenter/Conf/
      	
-	echo "rm ok!"
+	echo "配置文件移除成功"
 
