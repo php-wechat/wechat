@@ -30,29 +30,23 @@
     <div class="tm">
     	<ul>
 
-        	<li class="nav" id="link{viicms:$nav_val['id']}">
-			<a href="#" onClick="JumpleftFrame('{viicms::U('System/menu',array('pid'=>$nav_val['id'],'level'=>2,'title'=>rawurlencode
-($nav_val['title'])))}',{viicms:$nav_val['id']});">站点设置</a></li>
+        	<li class="nav curr" id="link{viicms:$nav_val['id']}">
+			<a href="{:U('System/menu',array('nav_id'=>1))}" target="left">站点设置</a></li>
 
             <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="#" onClick="JumpleftFrame('{viicms::U('System/menu',array('pid'=>$nav_val['id'],'level'=>2,'title'=>rawurlencode
-($nav_val['title'])))}',{viicms:$nav_val['id']});">用户管理</a></li>
+                <a href="{:U('System/menu',array('nav_id'=>2))}" target="left">用户管理</a></li>
 
             <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="#" onClick="JumpleftFrame('{viicms::U('System/menu',array('pid'=>$nav_val['id'],'level'=>2,'title'=>rawurlencode
-($nav_val['title'])))}',{viicms:$nav_val['id']});">内容管理</a></li>
+                <a href="{:U('System/menu',array('nav_id'=>3))}" target="left">内容管理</a></li>
 
             <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="#" onClick="JumpleftFrame('{viicms::U('System/menu',array('pid'=>$nav_val['id'],'level'=>2,'title'=>rawurlencode
-($nav_val['title'])))}',{viicms:$nav_val['id']});">公总号管理</a></li>
+                <a href="{:U('System/menu',array('nav_id'=>4))}" target="left">公总号管理</a></li>
 
             <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="#" onClick="JumpleftFrame('{viicms::U('System/menu',array('pid'=>$nav_val['id'],'level'=>2,'title'=>rawurlencode
-($nav_val['title'])))}',{viicms:$nav_val['id']});">功能模块</a></li>
+                <a href="{:U('System/menu',array('nav_id'=>5))}" target="left">功能模块</a></li>
 
             <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="#" onClick="JumpleftFrame('{viicms::U('System/menu',array('pid'=>$nav_val['id'],'level'=>2,'title'=>rawurlencode
-($nav_val['title'])))}',{viicms:$nav_val['id']});">扩展管理</a></li>
+                <a href="{:U('System/menu',array('nav_id'=>6))}" target="left">扩展管理</a></li>
         </ul>
     </div>
 <div class="topnav">

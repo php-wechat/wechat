@@ -6,10 +6,7 @@
 <body class="warp">
 <div id="artlist">
 	<div class="mod kjnav">
-		<volist name="nav" id="vo">
-		<a href="{viicms::U($action.'/'.$vo['name'],array('pid'=>$_GET['pid'],'level'=>3,'title'=>urlencode
-($vo['title'])))}">{viicms:$vo['title']}</a>
-		<if condition="($action eq 'Article') or ($action eq 'Img') or ($action eq 'Text') or ($action eq 'Voiceresponse')"><php>break;</php></if>
-		</volist>
+		<a href="#">创建用户</a>
+        <a href="#">用户列表</a>
 	</div>   	
 </div>

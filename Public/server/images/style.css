@@ -61,7 +61,7 @@ a.logo,a.logo:visited {float:left;width:556px;display:block;line-height:240px;he
 
 
 #content { position:relative;heigsht:100%;}
-body.showmenu #frmTitle {display:block;}
+
 body.hidemenu #frmTitle{display:none;}
 
 #frmTitle {background:url(leftbg.png) repeat-y right 100%;padding:0 12px 0 0px;border-right:1px solid #A7A7A5}

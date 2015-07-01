@@ -1,5 +1,7 @@
 <div class="set_top">
-	<volist name="nav" id="vo">
-		<li <if condition="ACTION_NAME eq $vo['name']">id="set_top_li_bg"</if>><a href="{viicms::U($action.'/'.$vo['name'],array('pid'=>6,'level'=>3))}">{viicms:$vo['title']}</a></li>
-	</volist>
+		<li id="set_top_li_bg"><a href="{:U('Site/index')}">基本信息设置</a></li>
+		<li><a href="{:U('Site/safe')}">安全设置</a></li>
+		<li><a href="{:U('Site/email')}">邮箱设置</a></li>
+		<li><a href="{:U('Site/upfile')}">附件设置</a></li>
+		<li><a href="{:U('Site/alipay')}">在线支付接口</a></li>
 </div>
