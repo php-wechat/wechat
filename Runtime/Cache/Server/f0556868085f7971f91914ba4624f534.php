@@ -15,58 +15,57 @@
 #set_top_li_bg{background:url('/Public/server/images/set_top_li_hover.png');}
 </style>
 <div class="set_top">
-		<li id="set_top_li_bg"><a href="<?php echo U('Site/index');?>">基本信息设置</a></li>
-		<li><a href="<?php echo U('Site/safe');?>">安全设置</a></li>
-		<li><a href="<?php echo U('Site/email');?>">邮箱设置</a></li>
-		<li><a href="<?php echo U('Site/upfile');?>">附件设置</a></li>
-		<li><a href="<?php echo U('Site/alipay');?>">在线支付接口</a></li>
+		<li <?php if($is_on == 'site'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/index');?>">基本信息设置</a></li>
+		<li <?php if($is_on == 'weixin'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/weixin');?>">微信设置</a></li>
+		<li <?php if($is_on == 'email'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/email');?>">邮箱设置</a></li>
+		<li <?php if($is_on == 'upfile'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/upfile');?>">附件设置</a></li>
+		<li <?php if($is_on == 'alipay'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/alipay');?>">在线支付接口</a></li>
 </div>
 <div id="artlist">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="addn">
- <form id="myform" action="{viicms::U('Site/insert')}" method="post">
+ <form id="myform" action="/Server/Site/update/act/email" method="post">
 	<tr> 
       <td  height="48" align="right"><strong>邮箱发送方式：</strong></td>
       <td><input type="radio" name="email" value="true" <?php if(C('email')==='true')echo checked; ?> />SMTP函数发送<input type="radio" name="email" value="false" <?php if(C('email')==='false')echo checked; ?> />mail模块发送</td>
     </tr>
     <tr> 
       <td  height="48" align="right"><strong>邮件服务器：</strong></td>
-      <td><input type="text" name="email_server" value="{viicms::C('email_server')}" class="ipt" size="45" /><span>&nbsp;&nbsp;例：百合网</span>
+      <td><input type="text" name="email_server" value="<?php echo C('email_server');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;例：百合网</span>
 	  </td>
     </tr>
 	 <tr> 
       <td  height="48" align="right"><strong>服务器端口：</strong></td>
-      <td><input type="text" name="email_port" value="{viicms::C('email_port')}" class="ipt" size="45" /><span>&nbsp;&nbsp;一般不超过80个字符</span>
+      <td><input type="text" name="email_port" value="<?php echo C('email_port');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;一般不超过80个字符</span>
 	  
     </tr>
-	<!--<tr> 
+	<tr>
       <td  height="48" align="right"><strong>发件人地址：</strong></td>
-      <td><input type="text" name="email_form" value="{viicms::C('email_form')}" class="ipt" size="45" /><span>&nbsp;&nbsp;一般不超过80个字符</span>
-    </tr>-->
+      <td><input type="text" name="email_form" value="<?php echo C('email_form');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;一般不超过80个字符</span>
+    </tr>
 	 <tr> 
       <td  height="48" align="right"><strong> 用户名：</strong></td>
-      <td><input type="text" name="email_user" value="{viicms::C('email_user')}" class="ipt" size="45" /><span>&nbsp;&nbsp;例:http://ViiCms.cn</span>
+      <td><input type="text" name="email_user" value="<?php echo C('email_user');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;例:http://ViiCms.cn</span>
     </tr> 
 	<tr> 
       <td  height="48" align="right"><strong>密  码：</strong></td>
-      <td><input type="text" name="email_pwd" value="{viicms::C('email_pwd')}" class="ipt" size="45" /><span>&nbsp;&nbsp;例：沪IPC备12587号</span>
+      <td><input type="text" name="email_pwd" value="<?php echo C('email_pwd');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;例：沪IPC备12587号</span>
     </tr>
-	<!--<tr> 
+	<tr>
       <td  height="48" align="right"><strong>注册邮件发送标题：</strong></td>
-      <td><textarea	 type="text" name="reg_email_title" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" />{viicms::C('reg_email_title')}</textarea><span>&nbsp;&nbsp;一般不超过100个字符</span>
+      <td><textarea	 type="text" name="reg_email_title" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" /><?php echo C('reg_email_title');?></textarea><span>&nbsp;&nbsp;一般不超过100个字符</span>
     </tr>	
 	<tr> 
       <td  height="48" align="right"><strong>注册邮件发送主题：</strong></td>
-      <td><textarea	 type="text" name="reg_email_content" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" />{viicms::C('reg_email_content')}</textarea><span>&nbsp;&nbsp;一般不超过200个字符</span>
-    </tr>-->
+      <td><textarea	 type="text" name="reg_email_content" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" /><?php echo C('reg_email_content');?></textarea><span>&nbsp;&nbsp;一般不超过200个字符</span>
+    </tr>
 	<tr> 
       <td  height="48" align="right"><strong>密码找回标题：</strong></td>
-      <td><textarea	 type="text" name="pwd_email_title" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" />{viicms::C('pwd_email_title')}</textarea><span>&nbsp;&nbsp;一般不超过100个字符</span>
+      <td><textarea	 type="text" name="pwd_email_title" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" /><?php echo C('pwd_email_title');?></textarea><span>&nbsp;&nbsp;一般不超过100个字符</span>
     </tr>	
 	<tr> 
       <td  height="48" align="right"><strong>密码找回主题：</strong></td>
-      <td><textarea	 type="text" name="pwd_email_content" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" />{viicms::C('pwd_email_content')}</textarea><span>&nbsp;&nbsp;一般不超过200个字符</span>
+      <td><textarea	 type="text" name="pwd_email_content" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" /><?php echo C('pwd_email_content');?></textarea><span>&nbsp;&nbsp;一般不超过200个字符</span>
     </tr>
-   <input type="hidden" name="files" value="email.php" />
     <tr> 
       <td height="48" colspan="2">
 		  <div id="addkey"></div>

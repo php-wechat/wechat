@@ -15,35 +15,31 @@
 #set_top_li_bg{background:url('/Public/server/images/set_top_li_hover.png');}
 </style>
 <div class="set_top">
-		<li id="set_top_li_bg"><a href="<?php echo U('Site/index');?>">基本信息设置</a></li>
-		<li><a href="<?php echo U('Site/safe');?>">安全设置</a></li>
-		<li><a href="<?php echo U('Site/email');?>">邮箱设置</a></li>
-		<li><a href="<?php echo U('Site/upfile');?>">附件设置</a></li>
-		<li><a href="<?php echo U('Site/alipay');?>">在线支付接口</a></li>
+		<li <?php if($is_on == 'site'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/index');?>">基本信息设置</a></li>
+		<li <?php if($is_on == 'weixin'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/weixin');?>">微信设置</a></li>
+		<li <?php if($is_on == 'email'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/email');?>">邮箱设置</a></li>
+		<li <?php if($is_on == 'upfile'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/upfile');?>">附件设置</a></li>
+		<li <?php if($is_on == 'alipay'): ?>id="set_top_li_bg"<?php endif; ?>><a href="<?php echo U('Site/alipay');?>">在线支付接口</a></li>
 </div>
 <div id="artlist">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="addn">
- <form id="myform" action="{viicms::U('Site/insert')}" method="post">
+ <form id="myform" action="/Server/Site/update/act/upfile" method="post">
 
     <tr> 
       <td  height="48" align="right"><strong>文件上传大小：</strong></td>
-      <td><input type="text" name="up_size" value="{viicms::C('up_size')}" class="ipt" size="45" /><span>&nbsp;&nbsp;例：20480（2M）</span>
+      <td><input type="text" name="up_size" value="<?php echo C('up_size');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;例：20480（2M）</span>
 	  </td>
     </tr>
 	 <tr> 
       <td  height="48" align="right"><strong>上传文件类型：</strong></td>
-      <td><input type="text" name="up_exts" value="{viicms::C('up_exts')}" class="ipt" size="45" /><span>&nbsp;&nbsp;多类型用,隔开</span>
+      <td><input type="text" name="up_exts" value="<?php echo C('up_exts');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;多类型用,隔开</span>
 	  
     </tr>
 	 <tr> 
       <td  height="48" align="right"><strong>文件存储路径：</strong></td>
-      <td><input type="text" name="up_path" value="{viicms::C('up_path')}" class="ipt" size="45" /><span>&nbsp;&nbsp;例:./data/upload</span>
+      <td><input type="text" name="up_path" value="<?php echo C('up_path');?>" class="ipt" size="45" /><span>&nbsp;&nbsp;例:./data/upload</span>
     </tr> 
-	<tr> 
-      <td  height="48" align="right"><strong>微信过期提醒：</strong></td>
-      <td><input type="text" name="connectnum" value="{viicms::C('connectnum')}" class="ipt" size="45" /><span>&nbsp;&nbsp;释：当微信请求超过或用户费用到期提示信息</span>
-    </tr>
-   <input type="hidden" name="files" value="upfile.php" />
+
     <tr> 
       <td height="48" colspan="2">
 		  <div id="addkey"></div>

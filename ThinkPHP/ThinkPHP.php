@@ -63,6 +63,17 @@ defined('CONF_EXT')     or define('CONF_EXT',       '.php'); // 配置文件后�
 defined('CONF_PARSE')   or define('CONF_PARSE',     '');    // 配置文件解析方法
 defined('ADDON_PATH')   or define('ADDON_PATH',     APP_PATH.'Addon');
 
+
+
+defined('SERVER_CONFIG')         or define('SERVER_CONFIG',     APP_PATH.'Server/Conf/');
+defined('CLI_CONFIG')            or define('CLI_CONFIG',     APP_PATH.'Cli/Conf/');
+defined('PAGE_CONFIG')           or define('PAGE_CONFIG',     APP_PATH.'Page/Conf/');
+defined('ACEBTER_CONFIG')        or define('ACEBTER_CONFIG',     APP_PATH.'Acenter/Conf/');
+defined('SCRIPT_CONFIG')         or define('SCRIPT_CONFIG',     APP_PATH.'Script/Conf/');
+defined('UCENTER_CONFIG')        or define('UCENTER_CONFIG',     APP_PATH.'Ucenter/Conf/');
+
+
+
 // 系统信息
 if(version_compare(PHP_VERSION,'5.4.0','<')) {
     ini_set('magic_quotes_runtime',0);

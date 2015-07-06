@@ -57,10 +57,10 @@ function tourl(url){
 
     <?php elseif($nav_id == 6): ?>
 
-        <h3>zhifu管理</h3>
+        <h3>扩展管理</h3>
         <ul>
-            <li><a href="<?php echo U('Site/index');?>" target="main" >站点设置</a></li>
-            <li><a href="<?php echo U('Node/index');?>" target="main" >节点设置</a></li>
+            <li><a href="#" target="main" >友情链接</a></li>
+            <li><a href="#" target="main" >其他</a></li>
         </ul><?php endif; ?>
 
 <p class="m_b"></p>

@@ -1,7 +1,7 @@
 <div class="set_top">
-		<li id="set_top_li_bg"><a href="{:U('Site/index')}">基本信息设置</a></li>
-		<li><a href="{:U('Site/safe')}">安全设置</a></li>
-		<li><a href="{:U('Site/email')}">邮箱设置</a></li>
-		<li><a href="{:U('Site/upfile')}">附件设置</a></li>
-		<li><a href="{:U('Site/alipay')}">在线支付接口</a></li>
+		<li <if condition="$is_on eq 'site'">id="set_top_li_bg"</if>><a href="{:U('Site/index')}">基本信息设置</a></li>
+		<li <if condition="$is_on eq 'weixin'">id="set_top_li_bg"</if>><a href="{:U('Site/weixin')}">微信设置</a></li>
+		<li <if condition="$is_on eq 'email'">id="set_top_li_bg"</if>><a href="{:U('Site/email')}">邮箱设置</a></li>
+		<li <if condition="$is_on eq 'upfile'">id="set_top_li_bg"</if>><a href="{:U('Site/upfile')}">附件设置</a></li>
+		<li <if condition="$is_on eq 'alipay'">id="set_top_li_bg"</if>><a href="{:U('Site/alipay')}">在线支付接口</a></li>
 </div>
