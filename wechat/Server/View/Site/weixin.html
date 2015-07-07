@@ -17,40 +17,42 @@
 <include file="Site:common" />
 <div id="artlist">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="addn">
- <form id="myform" action="{viicms::U('Site/insert')}" method="post">
+ <form id="myform" action="__CONTROLLER__/update/act/weixin" method="post">
 
     <tr> 
-      <td  height="48" align="right"><strong>微信还没做：</strong></td>
-      <td><input type="radio" name="TOKEN_ON" value="true" <php>if(C('TOKEN_ON')==='true') echo checked;</php> />开启
-		  <input type="radio" name="TOKEN_ON" value="false" <php>if(C('TOKEN_ON')==='false') echo checked;</php> />关闭
+      <td  height="48" align="right"><strong>appsecret：</strong></td>
+      <td><input type="text" name="appsecret" value="{:C('appsecret')}" class="ipt put_width"/><span>&nbsp;&nbsp;微信公众号appsecret</span>
+      </td>
+    </tr>
+	 <tr> 
+      <td  height="48" align="right"><strong>appid：</strong></td>
+      <td><input type="text" name="appid" value="{:C('appid')}" class="ipt put_width" /><span>&nbsp;&nbsp;微信公众号appid</span>
 	  </td>
     </tr>
 	 <tr> 
-      <td  height="48" align="right"><strong>请不要测试：</strong></td>
-      <td><input type="text" name="TOKEN_NAME" value="{viicms::C('TOKEN_NAME')}" class="ipt" size="45" /><span>&nbsp;&nbsp;一般不超过80个字符</span>
-	  </td>
-    </tr>
-	 <tr> 
-      <td  height="48" align="right"><strong>令牌验证加密：</strong></td>
-      <td><input type="text" name="TOKEN_TYPE" value="{viicms::C('TOKEN_TYPE')}" class="ipt" size="45" /><span>&nbsp;&nbsp;例:md5</span></td>
+      <td  height="48" align="right"><strong>token：</strong></td>
+      <td><input type="text" name="token" value="{:C('token')}" class="ipt put_width" size="45" /><span>&nbsp;&nbsp;微信公众号token</span></td>
     </tr> 
 	<tr> 
-      <td  height="48" align="right"><strong>令牌错误重置：</strong></td>
-      <td><input type="radio" name="TOKEN_RESET" value="true" <php>if(C('TOKEN_RESET')==='true') echo checked;</php> />开启
-		  <input type="radio" name="TOKEN_RESET" value="false" <php>if(C('TOKEN_RESET')==='false') echo checked;</php> />关闭
-		  </td>
+      <td  height="48" align="right"><strong>encodingAesKey：</strong></td>
+      <td><input type="text" name="encodingAesKey" value="{:C('encodingAesKey')}" class="ipt put_width"  /><span>&nbsp;&nbsp;encodingAesKey</span></td>
     </tr>
 	<tr> 
-      <td height="48" align="right"><strong>字段验证：</strong></td>
-      <td><input type="radio" name="DB_FIELDTYPE_CHECK" value="true" <php>if(C('DB_FIELDTYPE_CHECK')==='true') echo checked;</php> />开启
-		  <input type="radio" name="DB_FIELDTYPE_CHECK" value="false" <php>if(C('DB_FIELDTYPE_CHECK')==='false') echo checked;</php> />关闭
-		  </td>
+      <td height="48" align="right"><strong>微信公众号用户：</strong></td>
+      <td><input type="text" name="wx_user" value="{:C('wx_user')}" class="ipt put_width" /><span>&nbsp;&nbsp;例如:Kevin</span></td>
     </tr>
 	<tr> 
-      <td  height="48" align="right"><strong>参数过滤：</strong></td>
-      <td><input type="text" name="VAR_FILTERS" value="{viicms::C('VAR_FILTERS')}" class="ipt" size="45" /><span>&nbsp;&nbsp;例如:trim</span>
+      <td  height="48" align="right"><strong>公众号密码：</strong></td>
+      <td><input type="text" name="wx_pwd" value="{:C('wx_pwd')}" class="ipt put_width" size="45" /><span>&nbsp;&nbsp;例如:abc123</span></td>
     </tr>
-	<input type="hidden" name="files" value="safe.php" />
+     <tr>
+      <td  height="48" align="right"><strong>重新创建菜单：</strong></td>
+      <td><input type="radio" name="wx_ismenu"  value="1" <php>if(C('wx_ismenu')=='1')echo checked;</php> />创建菜单<input type="radio" name="wx_ismenu"  value="0" <php>if(C('wx_ismenu')=='0')echo checked;</php> />不创建菜单</td>
+    </tr>
+     <tr>
+         <td  height="48" align="right"><strong>关注后欢迎词:：</strong></td>
+         <td><textarea name="wx_welcome" style="width:450px;height:60px;margin:5px 0 5px 0;"  class="ipt" >{:C('wx_welcome')}</textarea><span>&nbsp;&nbsp;例如:welcome about you</span>
+     </tr>
     <tr> 
       <td height="48" colspan="2">
 		  <div id="addkey"></div>
