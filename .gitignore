@@ -1,11 +1,11 @@
-wechat/Page/Conf/*
-wechat/Acenter/Conf/*
-wechat/Cli/Conf/*
-wechat/Common/Conf/*
-wechat/Script/Conf/*
-wechat/Server/Conf/*
-wechat/Ucenter/Conf/*
-ThinkPHP/*
+wechat/Page/Conf/config.php
+wechat/Acenter/Conf/config.php
+wechat/Cli/Conf/config.php
+wechat/Common/Conf/config.php
+wechat/Script/Conf/config.php
+wechat/Server/Conf/config.php
+wechat/Ucenter/Conf/config.php
+index.php
 Runtime/*
 
 
