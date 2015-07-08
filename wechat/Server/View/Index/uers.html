@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户我来管理</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+    发送给谁 ：<input type="text" id="toid"  value=""/>
+    发送的内容是：<input type="text" id="content" value="123" />
+    <button id="btn">发送</button>
+
+
+<volist name="user.text" id="vo">
+    <a href="javascript:;" onclick="$('#toid').val('{$vo.fromusername}')"> {$vo.fromusername}</a> <br/>
+    {$vo.id}<br/>
+</volist>
+
+
+</body>
+<script>
+$(function(){
+    $('#btn').click(function(){
+        var data={
+                toid:$('#toid').val(),
+                content:$('#content').val()
+        }
+
+        $.post('__CONTROLLER__/sendmsg',data,function(data){
+            if(data.status==200){
+                alert('success');
+            }
+        },'json')
+    })
+
+
+
+})
+
+
+</script>
+</html>
