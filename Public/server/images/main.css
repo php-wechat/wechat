@@ -112,3 +112,6 @@ a.isub,a.isub:visited,a.isub:hover {background:url(isub.png) no-repeat;display:i
 .listpage a,
 .listpage a:visited,.listpage a:hover,.listpage b {padding:0px 8px; border:1px solid #F7F7F7;border-bottom:1px solid #DFDFDF;border-right:1px solid #DFDFDF;display:inline-block;height:20px;line-heighT:20px;text-decoration:none;color:#11396A;margin:0 3px;font-family:'宋体';background:#F7F7F7}
 .listpage a:hover,.listpage b {border:0;padding:1px 9px; color:#fff;background:#3F8EF3 url(main/pageh.png) no-repeat;}
+
+
+.put_width{width: 380px;}
