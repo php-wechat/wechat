@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+    <link rel="shortcut icon" href="/images/favicon.jpg">
+    <title>操作成功</title>
+    <link href="/Public/server/css/common.css" rel="stylesheet">
+</head>
+
+
+
+
+<body class="body-404">
+
+<div class="container-notice">
+
+    <section class="error-wrapper">
+        <i class="icon-4041"></i>
+        <h1 class="successcolor">Success!</h1>
+        <h2><i class="icon-ok-sign"></i>  {$message}</h2>
+        <p class="page-404"><present name="jumpUrl">
+            系统将在<span style="color: green; font-weight: bold" id="wait">{$waitSecond}</span>秒后自动跳转，如果不想等待，直接点击<a
+                href="{$jumpUrl}"  id="href">这里</a>
+
+            <script type="text/javascript">
+                (function(){
+                    var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+                    var interval = setInterval(function(){
+                        var time = --wait.innerHTML;
+                        if(time <= 0) {
+                            location.href = href;
+                            clearInterval(interval);
+                        };
+                    }, 1000);
+                })();
+            </script> </present></p>
+    </section>
+
+</div>
+
+</body>
+</html>

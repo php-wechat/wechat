@@ -20,8 +20,110 @@ body{background-color:#f4f9fe;}
 
 
 /*container*/
-.container{width:950px}
+.container{width:950px;margin-left: auto;margin-right: auto;}
 
 
 /*footer*/
 .footer{height:70px;color:#999;line-height:24px;text-align:center;width:100%;}
+
+
+
+/*404 page*/
+.container-notice{
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+}
+.body-404 {
+    background-image:url("../../common/images/web_bj.jpg");
+
+}
+
+.error-wrapper {
+    text-align: center;
+    margin-top: -4px;
+}
+
+.error-wrapper .icon-404{
+    background: url("../../common/images/404_icon.png") no-repeat;
+    width: 289px;
+    height: 274px;
+    display: inline-block;
+    margin-left: 20px;
+}
+.error-wrapper .icon-4041{
+    background: url("../../common/images/success.png") no-repeat;
+    width: 320px;
+    height: 270px;
+    display: inline-block;
+    margin-left: 30px;
+
+}
+.error-wrapper .icon-4042{
+    background: url("../../common/images/error.png") no-repeat;
+    width: 320px;
+    height: 270px;
+    display: inline-block;
+    margin-left: 30px;
+
+}
+.error-wrapper .errorcolor{
+    color:red;
+}
+.error-wrapper .successcolor{
+    color:green;
+}
+.error-wrapper h1 {
+    font-size: 90px;
+    font-weight: 300;
+    margin: -5px 0 0 0;
+}
+
+.error-wrapper h2 {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+}
+
+.error-wrapper p, .error-wrapper p a {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.error-wrapper p.page-404  {
+    color: #587686;
+    font-weight: bold;
+}
+
+.error-wrapper p.page-404 a, .error-wrapper p.page-500 a,  .error-wrapper p.page-404 a:hover, .error-wrapper p.page-500 a:hover {
+    color: green;
+    font-weight: bold;
+}
+
+ul.tagul li{
+
+    float:left;
+    display:inline-block;
+    padding:8px;
+    margin:7px 2px;
+    border:none;
+
+
+}
+
+ul.tagul a{
+
+    text-decoration:none;
+}
+.tougaobtn a{
+
+    color:#fff;
+    text-decoration:none;
+    padding: 7px 11px;
+    height: 30px;
+    line-height: 32px;
+}
+.btn.tougaobtn{
+    padding:0;
+}

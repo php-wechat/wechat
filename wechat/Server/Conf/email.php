@@ -5,7 +5,7 @@ return array (
   'email_port' => '25',
   'email_form' => 'kevin.liu@yunzhihui.com',
   'email_user' => 'Kevin',
-  'email_pwd' => 'xxoo',
+  'email_pwd' => 'xxoo0',
   'reg_email_title' => '欢迎你的注册！',
   'reg_email_content' => '有你更精彩！',
   'pwd_email_title' => '密码找回',
