@@ -4,14 +4,15 @@ use Think\Controller;
 use Think\WechatAuth;
 class IndexController extends Controller {
 
-    public function index(){
-	echo "后台模块";
+   public function index(){
+        pp(C('appid'),C('appsecret'));
+	    echo "后台模块";
    }
     //用户管理
     public function uers(){
         $userarray=array('event','image','link','location','text','video','voice');
         foreach ( $userarray as  $v ) {
-          $user[$v]= M('wx_log_'.$v)->group('FromUserName')->select();
+          $user[$v]= M('wx_log_'.$v)->group('fromusername')->select();
         }
 
         $this->assign('user',$user);

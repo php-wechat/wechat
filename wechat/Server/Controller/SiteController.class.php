@@ -42,7 +42,15 @@ class SiteController extends BaseController {
     public function update()
     {
         $file = I('get.act').'.php';
-        $res = $this->update_config($_POST,SERVER_CONFIG.$file);
+
+        if(I('get.act') == 'weixin')
+        {
+            $config_file = CONF_PATH.$file;
+        }else{
+            $config_file = SERVER_CONFIG.$file;
+        }
+        $res = $this->update_config($_POST,$config_file);
+
         if($res['status'] == 'ok'){
             die('操作成功');
 //            $this->success('操作成功',U('Site/index'));
