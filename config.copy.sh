@@ -1,24 +1,23 @@
 #!/bin/bash
 function config_remove {
-	rm -rf  $(pwd)/wechat/Page/Conf/
-	rm -rf  $(pwd)/wechat/Acenter/Conf/
-	rm -rf  $(pwd)/wechat/Cli/Conf/
-	rm -rf  $(pwd)/wechat/Common/Conf/
-	rm -rf  $(pwd)/wechat/Script/Conf/
-	rm -rf  $(pwd)/wechat/Server/Conf/
-	rm -rf  $(pwd)/wechat/Ucenter/Conf/
-	rm -rf  $(pwd)/ThinkPHP/
+	rm -rf  $(pwd)/wechat/Page/Conf/config.php
+	rm -rf  $(pwd)/wechat/Acenter/Conf/config.php
+	rm -rf  $(pwd)/wechat/Cli/Conf/config.php
+	rm -rf  $(pwd)/wechat/Common/Conf/config.php
+	rm -rf  $(pwd)/wechat/Script/Conf/config.php
+	rm -rf  $(pwd)/wechat/Server/Conf/config.php
+	rm -rf  $(pwd)/wechat/Ucenter/Conf/config.php
 	echo "配置文件移除成功"	
 }
 
 function config_update {
-	cp -r /xyz/$member/wechat/wechat/Page/Conf/ $(pwd)/wechat/Page/Conf/
-	cp -r /xyz/$member/wechat/wechat/Acenter/Conf/ $(pwd)/wechat/Acenter/Conf/
-	cp -r /xyz/$member/wechat/wechat/Cli/Conf/ $(pwd)/wechat/Cli/Conf/
-	cp -r /xyz/$member/wechat/wechat/Common/Conf/ $(pwd)/wechat/Common/Conf/
-	cp -r /xyz/$member/wechat/wechat/Script/Conf/ $(pwd)/wechat/Script/Conf/
-	cp -r /xyz/$member/wechat/wechat/Server/Conf/ $(pwd)/wechat/Server/Conf/
-	cp -r /xyz/$member/wechat/wechat/Ucenter/Conf/ $(pwd)/wechat/Ucenter/Conf/
+	cp -r /xyz/$member/wechat/wechat/Page/Conf/config.php $(pwd)/wechat/Page/Conf/
+	cp -r /xyz/$member/wechat/wechat/Acenter/Conf/config.php $(pwd)/wechat/Acenter/Conf/
+	cp -r /xyz/$member/wechat/wechat/Cli/Conf/config.php $(pwd)/wechat/Cli/Conf/
+	cp -r /xyz/$member/wechat/wechat/Common/Conf/config.php $(pwd)/wechat/Common/Conf/
+	cp -r /xyz/$member/wechat/wechat/Script/Conf/config.php $(pwd)/wechat/Script/Conf/
+	cp -r /xyz/$member/wechat/wechat/Server/Conf/config.php $(pwd)/wechat/Server/Conf/
+	cp -r /xyz/$member/wechat/wechat/Ucenter/Conf/config.php $(pwd)/wechat/Ucenter/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Page/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Acenter/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Cli/Conf/
