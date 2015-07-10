@@ -12,14 +12,13 @@ function config_remove {
 }
 
 function config_update {
-	cp -r /xyz/{print $member}/wechat/Page/Conf/ $(pwd)/wechat/Page/Conf/
-	cp -r /xyz/{print $member}/wechat/Acenter/Conf/ $(pwd)/wechat/Acenter/Conf/
-	cp -r /xyz/{print $member}/wechat/Cli/Conf/ $(pwd)/wechat/Cli/Conf/
-	cp -r /xyz/{print $member}/wechat/Common/Conf/ $(pwd)/wechat/Common/Conf/
-	cp -r /xyz/{print $member}/wechat/Script/Conf/ $(pwd)/wechat/Script/Conf/
-	cp -r /xyz/{print $member}/wechat/Server/Conf/ $(pwd)/wechat/Server/Conf/
-	cp -r /xyz/{print $member}/wechat/Ucenter/Conf/ $(pwd)/wechat/Ucenter/Conf/
-	cp -r /xyz/{print $member}/ThinkPHP/ $(pwd)/ThinkPHP/
+	cp -r /xyz/$member/wechat/wechat/Page/Conf/ $(pwd)/wechat/Page/Conf/
+	cp -r /xyz/$member/wechat/wechat/Acenter/Conf/ $(pwd)/wechat/Acenter/Conf/
+	cp -r /xyz/$member/wechat/wechat/Cli/Conf/ $(pwd)/wechat/Cli/Conf/
+	cp -r /xyz/$member/wechat/wechat/Common/Conf/ $(pwd)/wechat/Common/Conf/
+	cp -r /xyz/$member/wechat/wechat/Script/Conf/ $(pwd)/wechat/Script/Conf/
+	cp -r /xyz/$member/wechat/wechat/Server/Conf/ $(pwd)/wechat/Server/Conf/
+	cp -r /xyz/$member/wechat/wechat/Ucenter/Conf/ $(pwd)/wechat/Ucenter/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Page/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Acenter/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Cli/Conf/
@@ -27,7 +26,6 @@ function config_update {
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Script/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Server/Conf/
 	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/wechat/Ucenter/Conf/
-	chown -R $(whoami| awk '{print $1}'):$(whoami| awk '{print $1}') $(pwd)/ThinkPHP/
     echo "配置文件更新成功"
 }
 
