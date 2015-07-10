@@ -10,6 +10,19 @@ class IndexController extends Controller {
 
     public function __construct(){
 
+        if(APP_DEBUG)
+        {
+            include 'SocketLog.class.php';
+            slog(array(
+                'error_handler'=>true,
+                'optimize'=>true,               //是否显示利于优化的参数，如果运行时间，消耗内存等，默认为false
+                'show_included_files'=>true,    //是否显示本次程序运行加载了哪些文件，默认为false
+                'force_client_id'=>'kevin_debug',//日志强制记录到配置的client_id,默认为空
+                'allow_client_ids'=>array('kevin_debug')//限制允许读取日志的client_id，默认为空,表示所有人都可以获得日志。
+            ),'set_config');
+        }
+
+
         $this->weixinTool = D('WeixinTool','Service');
 
         $this->weixin   =  new WechatAuth(C('appid'),C('appsecret'),$this->weixinTool->getToken());
@@ -22,6 +35,7 @@ class IndexController extends Controller {
         $data = $wechat->request();
 
         if($data && is_array($data)){
+
 
             // 客户传来的数据进行保存
             $this->weixinTool->receive_data($data);

@@ -5,8 +5,10 @@ use Think\WechatAuth;
 class IndexController extends Controller {
 
    public function index(){
-        pp(C('appid'),C('appsecret'));
-	    echo "后台模块";
+      /* phpinfo();
+       die;
+       \SeasLog::error('a error log');*/
+	    echo '1231231';
    }
     //用户管理
     public function uers(){
