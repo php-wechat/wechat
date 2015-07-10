@@ -5,13 +5,15 @@
  * Date: 15-7-9
  * Time: 下午11:11
  */
-namespace Cli\Model;
+namespace Cli\Service;
 
 use Think\Model;
 use Think\WechatAuth;
-//常用工具模块
-class ToolModel extends Model{
+//微信常用工具模块
+class WeixinToolService extends Model{
 
+    //表示没有对应的模型表时，需要这句话
+    protected $autoCheckFields = False;
 
     // 接收的数据进行存储
     public function receive_data($data){
@@ -24,7 +26,7 @@ class ToolModel extends Model{
      * @return mixed
      * @throws \Exception
      */
-    private function getToken(){
+    public function getToken(){
         $weixin=new WechatAuth(C('appid'),C('appsecret'));
         $config   =  M('wx_sys_config')->where(array('appid'=>C('appid'),'appsecret'=> C('appsecret')))->order('id desc')->find();
         if (is_null($config) || $config['over_time']<time()) {

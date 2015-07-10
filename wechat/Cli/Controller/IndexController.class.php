@@ -10,9 +10,7 @@ class IndexController extends Controller {
 
     public function __construct(){
 
-        $this->weixinTool = new \Cli\Model\Tool();
-
-        pp('12312',D('Tool')->getToken());
+        $this->weixinTool = D('WeixinTool','Service');
 
         $this->weixin   =  new WechatAuth(C('appid'),C('appsecret'),$this->weixinTool->getToken());
     }
@@ -23,7 +21,7 @@ class IndexController extends Controller {
         //获取客户端数据
         $data = $wechat->request();
 
-       /* if($data && is_array($data)){
+        if($data && is_array($data)){
 
             // 客户传来的数据进行保存
             $this->weixinTool->receive_data($data);
@@ -59,7 +57,7 @@ class IndexController extends Controller {
             $content = $response['content'];
             $type    = $response['type'];
             $wechat->response($content, $type);
-        }*/
+        }
 
     }
 
