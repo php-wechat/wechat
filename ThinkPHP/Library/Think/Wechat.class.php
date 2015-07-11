@@ -84,7 +84,7 @@ class Wechat {
         );
 
         /* 按类型添加额外数据 */
-        $content = call_user_func(array(self, $type), $content);
+        $content = call_user_func(array('self', $type), $content);
         if($type == self::MSG_TYPE_TEXT || $type == self::MSG_TYPE_NEWS){
             $data = array_merge($data, $content);
         } else {
