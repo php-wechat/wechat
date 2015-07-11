@@ -52,9 +52,9 @@ class SiteController extends BaseController {
         $res = $this->update_config($_POST,$config_file);
 
         if($res['status'] == 'ok'){
-            $this->success('操作成功',U('Site/index'),100);
+            $this->success('操作成功',U('Site/index'),2);
         }else{
-            $this->error($res['msg'],U('Site/index'));
+            $this->error($res['msg'],U('Site/index'),3);
         }
     }
 

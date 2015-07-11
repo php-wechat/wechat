@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1">
 <title>
-	微cms后台管理登录
+	{:C('site_name')}后台管理登录
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="微cms微信营销系统" />
@@ -48,10 +48,10 @@ DD_belatedPNG.fix(".logo a img,.shade img");
 				<div class="t"></div>
 			</div>
 			<div class="content">
-            	<form name="form1" method="post" action=" " id="form1" class="myform">
+            	<form name="form1" method="post" action="__MODULE__/System/index" id="form1" class="myform">
 
                 	<fieldset>
-                		<legend><h1>viicms 后台管理系统</h1></legend>
+                		<legend><h1>{:C('site_name')}</h1></legend>
                        
                   		<p><span><input name="username" type="text" id="username" class="username_input" /></span></p>
                    	    <p><span><input name="password" type="password" id="pw" class="ps_input" /></span></p>
@@ -79,7 +79,7 @@ DD_belatedPNG.fix(".logo a img,.shade img");
 
 <!--footer-->
 <div class="footer pt30">
-	CopyRight 2013 微cms All Rights Reserved 版权所有 微cms<br />
+	CopyRight 2014 微cms All Rights Reserved 版权所有 微cms<br />
 	
 </div>
 </body>
