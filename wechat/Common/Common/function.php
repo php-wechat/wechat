@@ -52,3 +52,21 @@ function slog($log,$type='log',$css='')
     }
     throw new Exception($type.' is not SocketLog method');
 }
+
+/**
+ * @content 转换字节数为其他单位
+ * @param $filesize
+ * @return string
+ */
+function sizecount($filesize) {
+    if ($filesize >= pow(1024,3)) {
+        $filesize = round($filesize / pow(1024,3), 2) .' GB';
+    } elseif ($filesize >= pow(1024,2)) {
+        $filesize = round($filesize / pow(1024,2), 2) .' MB';
+    } elseif($filesize >= pow(1024,1)) {
+        $filesize = round($filesize / pow(1024,1), 2) . ' KB';
+    } else {
+        $filesize = $filesize.' Bytes';
+    }
+    return $filesize;
+}

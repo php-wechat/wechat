@@ -7,3 +7,4 @@ wechat/Script/Conf/config.php
 wechat/Server/Conf/config.php
 wechat/Ucenter/Conf/config.php
 Runtime/
+Public/DataBack

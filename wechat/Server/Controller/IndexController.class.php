@@ -8,7 +8,7 @@ class IndexController extends Controller {
       /* phpinfo();
        die;
        \SeasLog::error('a error log');*/
-
+         slog('123123');
 	    $this->display();
    }
     //用户管理
