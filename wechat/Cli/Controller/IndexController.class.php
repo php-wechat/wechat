@@ -37,7 +37,7 @@ class IndexController extends Controller {
         $wechat = new Wechat(C('token'));
         //获取客户端数据
         $data = $wechat->request();
-        
+
         if($data && is_array($data)){
 
 

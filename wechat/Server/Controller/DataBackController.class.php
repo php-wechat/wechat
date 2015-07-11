@@ -86,6 +86,7 @@ class DataBackController extends BaseController {
                 $msg =  '初始化失败，备份文件创建失败！';
                 echo json_encode(array('status' => 'error','msg' => $msg));die();
             }
+
         }elseif (IS_GET && is_numeric($id) && is_numeric($start)) { //备份数据
             $tables = session('backup_tables');
             //备份指定表
@@ -164,9 +165,51 @@ class DataBackController extends BaseController {
 
 
 
-    public function huanyuan()
+    public function huanyuan($time =0)
     {
+        if($time)
+        {
+            //获取备份文件信息
+            $name  = date('Ymd-His', $time) . '-*.sql*';
+            $path  = rtrim(C('DATA_BACKUP_PATH'),'/') . DIRECTORY_SEPARATOR . $name;
+            $files = glob($path);
+            $list  = array();
+            foreach($files as $name){
+                $basename = basename($name);
+                $match    = sscanf($basename, '%4s%2s%2s-%2s%2s%2s-%d');
+                $gz       = preg_match('/^\d{8,8}-\d{6,6}-\d+\.sql.gz$/', $basename);
+                $list[$match[6]] = array($match[6], $name, $gz);
+            }
+            ksort($list);
+            //检测文件正确性
+            $last = end($list);
 
+            if(count($list) === $last[0]){
+
+
+                $backup_config = array(
+                    'path'     => rtrim(C('DATA_BACKUP_PATH'),'/') . DIRECTORY_SEPARATOR,
+                    'compress' => $list['1']['2']);
+                $db = D('Database','Service');
+                $db->getInstance($list['1'],$backup_config);
+                $start = $db->import('0');
+
+                if(false === $start){
+                    $this->error('还原数据出错！');
+
+                } else {
+                    $this->success("还原数据成功！");
+                }
+
+
+            } else {
+
+                $this->error('备份文件可能已经损坏，请检查！');
+            }
+
+        }else{
+            $this->error('参数错误！');
+        }
     }
 
 

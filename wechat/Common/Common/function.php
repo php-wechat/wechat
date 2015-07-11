@@ -6,13 +6,11 @@
 function pp()
 {
     $arr = func_get_args();
-    echo '<pre>';
     foreach($arr as $val){
+        echo '<pre>';
         print_r($val);
         echo '</pre>';
-        echo '<pre>';
     }
-    echo '</pre>';
     die();
 }
 /**
