@@ -93,6 +93,31 @@ class WeixinToolService extends Model{
     }
 
 
+    public function createMenu()
+    {
+        /*$menu=$this->weixin->menuGet();
+
+        $data 	= 	$this->menu_to_data($menu);
+
+        if(M('wx_sys_menu')->count()>0){
+            $res=M('wx_sys_menu')->where("id=1")->delete();
+        }
+
+        foreach ($data as $new_menu) {
+            $res = M('wx_sys_menu')->add($new_menu);
+        }
+
+        if ($res) {
+            return true;
+        }else{
+            return false;
+        }*/
+    }
+
+    public function menu_to_data($menu)
+    {
+        //组合新的menu
+    }
 
 
 }

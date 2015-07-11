@@ -204,7 +204,7 @@ class Wechat {
         /* 获取数据 */
         $data = array($_GET['timestamp'], $_GET['nonce'], $token);
         $sign = $_GET['signature'];
-        
+
         /* 对数据进行字典排序 */
         sort($data, SORT_STRING);
 

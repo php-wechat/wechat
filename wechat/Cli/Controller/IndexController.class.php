@@ -12,7 +12,6 @@ class IndexController extends Controller {
 
         if(APP_DEBUG)
         {
-            include 'SocketLog.class.php';
             slog(array(
                 'error_handler'=>true,
                 'optimize'=>true,                    //是否显示利于优化的参数，如果运行时间，消耗内存等，默认为false
@@ -21,10 +20,15 @@ class IndexController extends Controller {
                 'allow_client_ids'=>C('DENUG_ARRAY') //限制允许读取日志的client_id，默认为空,表示所有人都可以获得日志。
             ),'set_config');
         }
-
+        slog('@@@@@');
         $this->weixinTool = D('WeixinTool','Service');
 
         $this->weixin   =  new WechatAuth(C('appid'),C('appsecret'),$this->weixinTool->getToken());
+
+        //是否更新创建菜单
+        if(C('wx_ismenu')==100){
+            $this->weixinTool->createMenu();
+        }
     }
 
     public function index(){
