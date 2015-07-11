@@ -2,6 +2,7 @@ wechat/Page/Conf/config.php
 wechat/Acenter/Conf/config.php
 wechat/Cli/Conf/config.php
 wechat/Common/Conf/config.php
+wechat/Common/Conf/weixin.php
 wechat/Script/Conf/config.php
 wechat/Server/Conf/config.php
 wechat/Ucenter/Conf/config.php
