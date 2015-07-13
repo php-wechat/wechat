@@ -29,24 +29,11 @@
     </div>
     <div class="tm" id="top_menu">
     	<ul>
-
-        	<li class="nav curr">
-			<a href="{:U('System/menu',array('nav_id'=>1))}" target="left">站点设置</a></li>
-
-            <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="{:U('System/menu',array('nav_id'=>2))}" target="left">用户管理</a></li>
-
-            <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="{:U('System/menu',array('nav_id'=>3))}" target="left">内容管理</a></li>
-
-            <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="{:U('System/menu',array('nav_id'=>4))}" target="left">公总号管理</a></li>
-
-            <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="{:U('System/menu',array('nav_id'=>5))}" target="left">功能模块</a></li>
-
-            <li class="nav" id="link{viicms:$nav_val['id']}">
-                <a href="{:U('System/menu',array('nav_id'=>6))}" target="left">系统管理</a></li>
+            <!--顶部菜单-->
+            <volist name="top_nume_info" id="menu">
+                <li class="nav <if condition='$key eq 0'>curr</if>"><a href="{:U('System/menu',array('nav_id'=>$menu['id']))}" target="left">{$menu['menu_name']}</a></li>
+            </volist>
+            <!--/顶部菜单-->
         </ul>
     </div>
 <div class="topnav">
