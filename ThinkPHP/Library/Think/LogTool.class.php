@@ -11,17 +11,24 @@ namespace Think;
 class LogTool
 {
 
-    public function __construct(){
+    public static function setLogPath(){
         if(!class_exists('Seaslog')){
             throw new \Exception('SeasLog没有开启');
         }
         //设置seasLog保存位置
         \SeasLog::setBasePath('./Runtime/SeasLog');
+
     }
 
+    public function  getlogPath()
+    {
+        self::setLogPath();
+        return \SeasLog::getBasePath();
+    }
 
     public static function error($message,array $content = array(),$module = '')
     {
+        self::setLogPath();
         if ($module != '') {
             \SeasLog::error($message, $content, $module);
         } else {
@@ -32,6 +39,7 @@ class LogTool
 
     public static function debug($message,array $content = array(),$module = '')
     {
+        self::setLogPath();
         if ($module != '') {
             \SeasLog::debug($message, $content, $module);
         } else {
@@ -42,6 +50,7 @@ class LogTool
 
     public static function info($message,array $content = array(),$module = '')
     {
+        self::setLogPath();
         if ($module != '') {
             \SeasLog::info($message, $content, $module);
         } else {
@@ -52,6 +61,7 @@ class LogTool
 
     public static function warning($message,array $content = array(),$module = '')
     {
+        self::setLogPath();
         if ($module != '') {
             \SeasLog::warning($message, $content, $module);
         } else {
@@ -61,6 +71,7 @@ class LogTool
 
     public static function critical($message,array $content = array(),$module = '')
     {
+        self::setLogPath();
         if ($module != '') {
             \SeasLog::critical($message, $content, $module);
         } else {
@@ -70,7 +81,7 @@ class LogTool
 
     public static function alert($message,array $content = array(),$module = '')
     {
-
+        self::setLogPath();
         if ($module != '') {
             \SeasLog::alert($message, $content, $module);
         } else {
@@ -81,6 +92,7 @@ class LogTool
 
     public static function emergency($message,array $content = array(),$module = '')
     {
+        self::setLogPath();
         if ($module != '') {
             \SeasLog::emergency($message, $content, $module);
         } else {
@@ -98,6 +110,7 @@ class LogTool
      */
     public static function log($level,$message,array $content = array(),$module = '')
     {
+        self::setLogPath();
         if ($module) {
             \SeasLog::$level($message, $content, $module);
         } else {

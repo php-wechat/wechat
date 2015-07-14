@@ -5,7 +5,8 @@ use Think\WechatAuth;
 class IndexController extends Controller {
 
    public function index(){
-        \Think\LogTool::error('a bug');
+       echo \Think\LogTool::getlogPath();
+        \Think\LogTool::error('a bug',array(),'Login/index');
 	    //$this->display();
    }
     //用户管理
