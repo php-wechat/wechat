@@ -5,6 +5,7 @@ class BaseController extends Controller {
 
     public function _initialize(){
 
+        parent::_initialize();
     }
 
 

@@ -1,1 +1,27 @@
- 
+查看socketLog端口是否开启
+netstat -ano|grep 1229
+
+
+查看socketLog进程是否开启了
+ps -aux | grep socketlog
+
+
+如果以上进程不存在或者端口不存在了，开启socketLog服务如下：
+socketlog-server > /dev/null &
+
+cd /root && ./lnmp restart
+
+
+
+seasLog的是使用方法：
+        \SeasLog::error('')
+
+
+
+
+//编译的时候
+/usr/local/php/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make
+make install
+/etc/init.d/php-fpm restart

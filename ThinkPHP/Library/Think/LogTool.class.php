@@ -15,75 +15,76 @@ class LogTool
         if(!class_exists('Seaslog')){
             throw new \Exception('SeasLog没有开启');
         }
-        //SeaaLog::BasePath();
+        //设置seasLog保存位置
+        \SeasLog::setBasePath('./Runtime/SeasLog');
     }
 
 
-    public function error($message,array $content = array(),$module = '')
+    public static function error($message,array $content = array(),$module = '')
     {
         if ($module != '') {
-            SeasLog::error($message, $content, $module);
+            \SeasLog::error($message, $content, $module);
         } else {
-            SeasLog::error($message, $content);
+            \SeasLog::error($message, $content);
         }
     }
 
 
-    public function debug($message,array $content = array(),$module = '')
+    public static function debug($message,array $content = array(),$module = '')
     {
         if ($module != '') {
-            SeasLog::debug($message, $content, $module);
+            \SeasLog::debug($message, $content, $module);
         } else {
-            SeasLog::debug($message, $content);
+            \SeasLog::debug($message, $content);
         }
     }
 
 
-    public function info($message,array $content = array(),$module = '')
+    public static function info($message,array $content = array(),$module = '')
     {
         if ($module != '') {
-            SeasLog::info($message, $content, $module);
+            \SeasLog::info($message, $content, $module);
         } else {
-            SeasLog::info($message, $content);
+            \SeasLog::info($message, $content);
         }
     }
 
 
-    public function warning($message,array $content = array(),$module = '')
+    public static function warning($message,array $content = array(),$module = '')
     {
         if ($module != '') {
-            SeasLog::warning($message, $content, $module);
+            \SeasLog::warning($message, $content, $module);
         } else {
-            SeasLog::warning($message, $content);
+            \SeasLog::warning($message, $content);
         }
     }
 
-    public function critical($message,array $content = array(),$module = '')
+    public static function critical($message,array $content = array(),$module = '')
     {
         if ($module != '') {
-            SeasLog::critical($message, $content, $module);
+            \SeasLog::critical($message, $content, $module);
         } else {
-            SeasLog::critical($message, $content);
+            \SeasLog::critical($message, $content);
         }
     }
 
-    public function alert($message,array $content = array(),$module = '')
+    public static function alert($message,array $content = array(),$module = '')
     {
 
         if ($module != '') {
-            SeasLog::alert($message, $content, $module);
+            \SeasLog::alert($message, $content, $module);
         } else {
-            SeasLog::alert($message, $content);
+            \SeasLog::alert($message, $content);
         }
 
     }
 
-    public function emergency($message,array $content = array(),$module = '')
+    public static function emergency($message,array $content = array(),$module = '')
     {
         if ($module != '') {
-            SeasLog::emergency($message, $content, $module);
+            \SeasLog::emergency($message, $content, $module);
         } else {
-            SeasLog::emergency($message, $content);
+            \SeasLog::emergency($message, $content);
         }
     }
 
@@ -95,12 +96,12 @@ class LogTool
      * @param array $content
      * @param string $module
      */
-    public function log($level,$message,array $content = array(),$module = '')
+    public static function log($level,$message,array $content = array(),$module = '')
     {
         if ($module) {
-            SeasLog::$level($message, $content, $module);
+            \SeasLog::$level($message, $content, $module);
         } else {
-            SeasLog::$level($message, $content);
+            \SeasLog::$level($message, $content);
         }
     }
 }

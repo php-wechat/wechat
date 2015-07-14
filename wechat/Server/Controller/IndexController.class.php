@@ -5,11 +5,8 @@ use Think\WechatAuth;
 class IndexController extends Controller {
 
    public function index(){
-      /* phpinfo();
-       die;
-       \SeasLog::error('a error log');*/
-         slog('123123');
-	    $this->display();
+        \Think\LogTool::error('a bug');
+	    //$this->display();
    }
     //用户管理
     public function uers(){
