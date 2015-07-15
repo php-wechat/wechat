@@ -13,7 +13,7 @@ class LogTool
 
     public static function setLogPath(){
         if(!class_exists('Seaslog')){
-            throw new \Exception('SeasLog没有开启');
+            throw new \Exception('SeasLog没有开启,请开启服务！');
         }
         //设置seasLog保存位置
         \SeasLog::setBasePath('./Runtime/SeasLog');
