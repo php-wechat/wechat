@@ -1,12 +1,11 @@
 <?php
 namespace Server\Controller;
 use Think\Controller;
-class SystemController extends Controller {
+class SystemController extends BaseController {
 
    public function index()
    {
-    
-	$this->display();
+	  $this->display();
    }
 
     public function menu()
