@@ -1,6 +1,6 @@
 <?php
 
-
+//该登陆由于不能继承base，继承base，当退出时，会导致一直重定向
 namespace Server\Controller;
 use Think\Controller;
 class AdminController extends Controller {
@@ -179,7 +179,7 @@ class AdminController extends Controller {
         if(is_integer($jumpUrl))
         {
             $timeout = $jumpUrl;
-            $jumpUrl = '';
+            $jumpUrl = ' ';
         }
 
         $this->assign('message',$msg);
@@ -199,7 +199,7 @@ class AdminController extends Controller {
         if(is_integer($jumpUrl))
         {
             $timeout = $jumpUrl;
-            $jumpUrl = '';
+            $jumpUrl = ' ';
         }
         $this->assign('error',$msg);
         $this->assign('jumpUrl',$jumpUrl);
