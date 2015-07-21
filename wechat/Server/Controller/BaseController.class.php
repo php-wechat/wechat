@@ -5,7 +5,8 @@ class BaseController extends Controller {
 
     public function _initialize(){
 
-        parent::_initialize();
+
+
     }
 
 
@@ -21,7 +22,7 @@ class BaseController extends Controller {
         if(is_integer($jumpUrl))
         {
             $timeout = $jumpUrl;
-            $jumpUrl = ' ';
+            $jumpUrl = '';
         }
 
         $this->assign('message',$msg);
@@ -41,7 +42,7 @@ class BaseController extends Controller {
         if(is_integer($jumpUrl))
         {
             $timeout = $jumpUrl;
-            $jumpUrl = ' ';
+            $jumpUrl = '';
         }
         $this->assign('error',$msg);
         $this->assign('jumpUrl',$jumpUrl);
