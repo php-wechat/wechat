@@ -42,7 +42,7 @@ function sendEMail($to, $subject, $content) {
      $mail->IsSMTP();                        // Set mailer to use SMTP
      $mail->Host        = C('email_server');     // Specify main and backup SMTP servers
      $mail->SMTPAuth    = true;             // Enable SMTP authentication
-     $mail->Username    = C('email_user');           //SMTP username
+     $mail->Username    = C('email_form');           //SMTP username
      $mail->Password    = C('email_pwd');           //SMTP password
      //$mail->SMTPSecure = 'tls';               // Enable TLS encryption, `ssl` also accepted
      //$mail->Port = 587;                        // TCP port to connect to
