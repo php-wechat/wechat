@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+<title>
+	{:C('site_name')}后台管理登录
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="微cms微信营销系统" />
+<meta name="Description" content="微cms微信营销系统" />
+<link type="text/css" rel="stylesheet" href="/Public/server/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="/Public/server/css/common.css" />
+<link type="text/css" rel="stylesheet" href="/Public/server/css/page.css" />
+<script type="text/javascript" src="/Public/server/js/jquery-1.8.3.min.js"></script>
+<!--验证表单插件-->
+<script src="/Public/server/js/verify/verify.js"></script>
+<!--[if IE 6]>
+ 
+<script language="javascript" type="text/javascript" src="/Public/server/js/DD_belatedPNG.js"></script>
+ 
+<script language="javascript" type="text/javascript">
+ 
+DD_belatedPNG.fix(".logo a img,.shade img");
+ 
+</script>
+ 
+<![endif]-->
+
+<style>
+    #show input{
+        color:#625F5F;
+    }
+
+</style>
+<script type="text/javascript">
+    $(function () {
+        $("input").focus(function () {
+            $(this).addClass("inputFocus");
+        }).blur(function () {
+            $(this).removeClass("inputFocus");
+        });
+    });
+
+    //刷新验证码
+     function refresh(obj){
+        obj.src="__MODULE__/Admin/verify/id/" + Math.random();
+    }
+</script>
+</head>
+<!-- <body style="background: #378ECD url(tpl/Admin/common/login/A001.jpg)repeat-x;"> -->
+<body style="background: #378ECD">
+<!--container-->
+<!--找回管理员密码-->
+<div class="container bc">
+    <div class="loginBox">
+            <div class="top clearfix">
+                <div class="tl"></div>
+                <div class="tr"></div>
+                <div class="t"></div>
+            </div>
+            <div class="content">
+                <form name="form1" method="post" action="__MODULE__/Sendemail/repwd" id="form1" class="myform">
+
+                    <fieldset>
+                        <legend ><h1 width:100px;>重新设置密码</h1></legend>
+                       
+                        <p><span><span><input verifys="{v:{r:/^[0-9A-Za-z-_]{3,16}$/},a:{u:'__MODULE__/Admin/checkuser'}}" name="rootname" type="text" id="rootname" class="username_input"/></span><span id="rootnameTip" class="error"></span></span></p>
+                        
+						<p><span><input class="ps_input" type="password" verifys="{v:{r:/^.{6,20}$/}}" name="pwd"></span><span id="pwdTip" class="error"></span></p>
+                        
+						<p><span><input class="ps_input" type="password" verifys="{v:{r:/^.{6,20}$/},c:{m:'=',w:'pwd'}}" name="repwd"></span><span id="repwdTip" class="error"></span></p>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="chk_txt">返回登陆：<a  id="return" href="__MODULE__/Admin/index">点这里</a> 今天是美好的一天，请您记住密码.</span>     
+               <input type="submit" name="Button1" value="" id="Button1" class="subBtn" />
+
+                    </fieldset>
+
+                </form> 
+            </div>
+            <div class="bottom clearfix">
+                <div class="bl"></div>
+                <div class="br"></div>
+                <div class="b"></div>
+            </div>
+        </div>
+
+        
+</div>
+
+
+<!--footer-->
+<div class="footer pt30">
+	CopyRight 2014 微cms All Rights Reserved 版权所有 微cms<br />
+	
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 
 namespace Server\Controller;
 use Think\Controller;
-class AdminController extends Controller {
+class AdminController extends BaseController {
 
     //加载登陆界面
     public function index(){
@@ -147,8 +147,6 @@ class AdminController extends Controller {
 
         echo empty($result)?false:true;
     }
-
-    
 
 
     //退出
