@@ -16,7 +16,6 @@ function pp()
     die();
 }
 
-
 /**
  * 加密算法
  */
@@ -69,8 +68,6 @@ function mypwd($pwd){
             return true;
          }
     }
-
-
 
 
 /**
