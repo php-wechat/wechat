@@ -1,12 +1,13 @@
 <?php
 namespace Server\Controller;
 use Think\Controller;
-class SystemController extends Controller {
+class SystemController extends BaseController {
 
    public function index()
    {
-    
-	$this->display();
+      $top_menu_info = M('top_menu')->order(array('order'=>'asc'))->select();
+      $this->assign('top_nume_info',$top_menu_info);
+	  $this->display();
    }
 
     public function menu()
