@@ -4,22 +4,8 @@ use Think\Controller;
 class BaseController extends Controller {
 
     public function _initialize(){
-        $login = session('isLogin');
-        if(!isset($login))
-        {
-            $symbol = cookie('symbol');
-            if(!isset($symbol))
-            {
-                //die('还没登陆！');
-                $this->redirect(U('Admin/index'));
-            }else{
-                //如果有cookie，这时候登陆进来后，设置本次session
-                $admin = D('root_admin');
-                $id = session(C('ROOT_ADMIN_ID'));
-                $data = $admin->find($id);
-                session('admin',$data);
-            }
-        }
+
+
 
     }
 
@@ -36,7 +22,7 @@ class BaseController extends Controller {
         if(is_integer($jumpUrl))
         {
             $timeout = $jumpUrl;
-            $jumpUrl = ' ';
+            $jumpUrl = '';
         }
 
         $this->assign('message',$msg);
@@ -56,7 +42,7 @@ class BaseController extends Controller {
         if(is_integer($jumpUrl))
         {
             $timeout = $jumpUrl;
-            $jumpUrl = ' ';
+            $jumpUrl = '';
         }
         $this->assign('error',$msg);
         $this->assign('jumpUrl',$jumpUrl);

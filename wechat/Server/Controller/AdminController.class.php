@@ -1,13 +1,13 @@
 <?php
 
-//该登陆由于不能继承base，继承base，当退出时，会导致一直重定向
+
 namespace Server\Controller;
 use Think\Controller;
-class AdminController extends BaseController {
+class AdminController extends Controller {
 
     //加载登陆界面
     public function index(){
-	    $this->display();
+	    $this->display('index');
    }
 
 
@@ -24,7 +24,7 @@ class AdminController extends BaseController {
         $data['pwd'] = I('post.password', '', 'mypwd');
         $code = I('post.code');
 
-        $res = $admin->where($data)->find();
+        $res = $admin->field('id,enabled,this_time,login_nums')->where($data)->find();
         //dump($res);
 
         if (!$res['enabled'])
@@ -46,11 +46,10 @@ class AdminController extends BaseController {
         if ($res) 
         {
             // 将用户的登录信息保存在SESSION中
-            session(C('ROOT_ADMIN_ID'), $res['id']);            // 用户ID
+            session(C('ROOT_ADMIN_ID'), $res['id']);                  // 用户ID
             session(C('ROOT_ADMIN_NAME'), $data['name']);     // 用户名
-            session('admin', $res);                           //把用户信息都村起来，需要哪个就找哪个
-            session('enabled', $res['enabled']);              // 用户状态
-            session('isLogin', true);                         // 是否为登录状态
+            session('enabled', $res['enabled']);          // 用户状态
+            session('isLogin', true);                   // 是否为登录状态
             //dump(session());exit;
             // 当“记住密码”项不为空时，使用Cookie存储用户信息
             $remember = I('post.remember');
@@ -162,47 +161,6 @@ class AdminController extends BaseController {
         //sleep(2);
         $url = U("Admin/index");
         echo "<script>window.top.location.href='{$url}';</script>";
-    }
-
-
-    /**
-     * @content 当路径是空时，默认返回上一页
-     * @param string $msg
-     * @param string $jumpUrl
-     * @param int $timeout
-     * @demo 调用方式 success('成功',U('Index/login'),3) 或者 success('成功',3) 或则 success('成功')
-     */
-    public function success($msg='操作成功',$jumpUrl='',$timeout=1)
-    {
-        if(is_integer($jumpUrl))
-        {
-            $timeout = $jumpUrl;
-            $jumpUrl = ' ';
-        }
-
-        $this->assign('message',$msg);
-        $this->assign('jumpUrl',$jumpUrl);
-        $this->assign('waitSecond',$timeout);
-        $this->display('Common/success');
-    }
-
-    /**
-     * @param string $msg
-     * @param string $jumpUrl
-     * @param int $timeout
-     * @demo 调用方式 error('失败',U('Index/login'),3) 或者 error('失败',3) 或则 error('成功')
-     */
-    public function error($msg='操作失败',$jumpUrl='',$timeout=2)
-    {
-        if(is_integer($jumpUrl))
-        {
-            $timeout = $jumpUrl;
-            $jumpUrl = ' ';
-        }
-        $this->assign('error',$msg);
-        $this->assign('jumpUrl',$jumpUrl);
-        $this->assign('waitSecond',$timeout);
-        $this->display('Common/error');
     }
 
 
