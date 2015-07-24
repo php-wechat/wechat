@@ -5,11 +5,13 @@ class NodeController extends Controller {
 
    public function index()
    {
-	$this->display();
+	    $this->display();
    }
 
     public function add()
     {
+        $top_menu = M('top_menu')->field('id,menu_name')->select();
+        $this->assign('top_menu',$top_menu);
         $this->display();
     }
 
