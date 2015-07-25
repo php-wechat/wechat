@@ -5,7 +5,23 @@ class BaseController extends Controller {
 
     public function _initialize(){
 
-
+        $login = session('isLogin');
+        if(!isset($login))
+        {
+             $symbol = cookie('symbol');
+             if(!isset($symbol))
+             {
+                 //die('还没登陆！');
+                 $this->error('请先登陆',U('Admin/index'));
+                 die();
+             }else{
+                 //如果有cookie，这时候登陆进来后，设置本次session
+                 $admin = D('root_admin');
+                 $id = session(C('ROOT_ADMIN_ID'));
+                 $data = $admin->find($id);
+                 session('admin',$data);
+             }
+        }
 
     }
 
