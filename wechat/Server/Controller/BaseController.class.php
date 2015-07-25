@@ -45,6 +45,7 @@ class BaseController extends Controller {
         $this->assign('jumpUrl',$jumpUrl);
         $this->assign('waitSecond',$timeout);
         $this->display('Common/success');
+        die();
     }
 
     /**
@@ -64,6 +65,7 @@ class BaseController extends Controller {
         $this->assign('jumpUrl',$jumpUrl);
         $this->assign('waitSecond',$timeout);
         $this->display('Common/error');
+        die();
     }
 
 }
