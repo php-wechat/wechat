@@ -14,17 +14,31 @@
     </div>
 </div>
 <div class="cr"></div>
-<form action="{viicms::U('Node/sort')}" method="post">
+<form action="{:U('Node/order')}" method="post">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="alist">
   <tr>
-    <th width="5%">排序权重</th>
-    <th width="5%" class="xtit">ID</th>
-    <th width="40%">菜单名称</th>
-    <th width="6%">类型</th>
-    <th width="6%">状态</th>
-    <th width="6%">显示</th>
-    <th width="24%">操作</th>
+    <th width="5%"><b>ID</b></th>
+    <th width="13%"><b>排序</b></th>
+    <th width="18%"><b>顶部菜单</b></th>
+    <th class="menu_pos_left"><b>菜单名称</b></th>
+    <th width="20%"><b>操作模块</b></th>
+    <th width="25%"><b>操作</b></th>
   </tr>
+
+  <volist name="cat" id="vo">
+   <tr>
+      <td>{$vo.id}</td>
+      <td><eq name="vo.pid" value="0">&nbsp;<else/><input type="text" size="6" value="0"/></eq></td>
+      <td>{$top_menu[$vo['top_menu_id']]}</td>
+      <td class="menu_pos_left"><eq name="vo.pid" value="0"><b>{$vo.jiange}{$vo.name}</b><else/>{$vo.jiange}{$vo.name}</eq></td>
+      <td>{$vo.blong_c}/{$vo.blong_a}</td>
+      <td>
+          <a href="{:U('Node/addSonNode',array('id'=>$vo['id']))}">添加子菜单</a>&nbsp;
+          |&nbsp; <a href="{:U('Node/edit',array('id'=>$vo['id']))}">修改</a>&nbsp;
+          |&nbsp; <a href="{:U('Node/delete',array('id'=>$vo['id']))}">删除</a>
+      </td>
+  </tr>
+  </volist>
 
    
 </table>

@@ -26,9 +26,9 @@
         <tr>
             <td height="48" align="right"><strong>归属顶部菜单：</strong></td>
             <td>
-                <select name="top_menu_id" style="width:136px">
+                <select name="top_menu_id" style="width:136px" onchange="ajaxTopMenu(this)">
                     <volist name="top_menu" id="row">
-                        <option value="{$row_id}">{$row.menu_name}</option>
+                        <option value="{$row.id}">{$row.menu_name}</option>
                      </volist>
                 </select>
             </td>
@@ -36,8 +36,11 @@
         <tr>
           <td height="48" align="right"><strong>归属节点：</strong></td>
           <td>
-            <select name="pid" style="width:136px">
-                <option value="">父级节点</option>
+            <select name="pid" style="width:136px" id="cat">
+                <option value="0">父级节点</option>
+                <volist name="cat" id="vo">
+                    <option value="{$vo.id}">{$vo.jiange}<eq name="vo.pid" value="0"><strong>{$vo.name}</strong><else/>{$vo.name}</eq></option>
+                </volist>
             </select>
           </td>
         </tr>
@@ -61,7 +64,7 @@
 
         <tr>
             <td height="48" align="right">&nbsp;</td>
-            <td height="48" align="left"><input type="submit" value="添加节点" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input onclick="window.history.back();" type="button" value="取消返回" /></td>
+            <td height="48" align="left"><input type="submit" value="添加节点" class="bginput"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="bginput" onclick="window.history.back();" type="button" value="取消返回" /></td>
           </td>
         </tr>
     </table>
@@ -72,4 +75,13 @@
 
 </div>
 </body>
+<script>
+    function ajaxTopMenu(obj)
+    {
+       var param = {'id':obj.value};
+        $.post("{:U('Node/ajaxTopMenu')}", param,function(result){
+            $("#cat").html(result);
+        });
+    }
+</script>
 </html>

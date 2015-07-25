@@ -27,7 +27,7 @@ class AdminController extends Controller {
         $res = $admin->where($data)->find();
         //dump($res);
 
-        if (!$res['enabled'])
+        if (!$res['status'])
         {
             $this->error('你的帐户已禁止，请联系管理员.');
             exit;
