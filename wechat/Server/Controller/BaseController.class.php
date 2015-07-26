@@ -13,7 +13,6 @@ class BaseController extends Controller {
              {
                  //die('还没登陆！');
                  $this->error('请先登陆',U('Admin/index'));
-                 die();
              }
         }else{
             //如果有cookie，这时候登陆进来后，设置本次session
@@ -23,8 +22,28 @@ class BaseController extends Controller {
             session('admin',$data);
         }
 
+        //验证是否有权限访问
+        $this->is_authVist();
     }
 
+    public function is_authVist()
+    {
+        $vist_ac = CONTROLLER_NAME.'-'.ACTION_NAME;
+        $id = session(C('ROOT_ADMIN_ID'));
+
+        $admin = M('root_admin')->field('role_id')->find($id);
+        //根据角色id来找对应的拥有的权限
+        $role_auth = M('root_role')->find($admin['role_id']);
+
+        $role_auth_ac = explode(',',$role_auth['role_auth_ac']);
+
+        $menu_arr = array('System-index','System-menu','System-main');
+        if(!in_array($vist_ac,$role_auth_ac) && !in_array($vist_ac,$menu_arr))
+        {
+//            pp($vist_ac);
+            $this->error("对不起，你没有权限访问！",U('System/main'));
+        }
+    }
 
     /**
      * @content 当路径是空时，默认返回上一页
