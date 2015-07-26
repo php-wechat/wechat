@@ -118,3 +118,9 @@ a.isub,a.isub:visited,a.isub:hover {background:url(isub.png) no-repeat;display:i
 
 .put_width{width: 380px;}
 .bginput{padding: 2px 4px;cursor: pointer;}
+
+.role_div{width: 32%;overflow: hidden;float: left;margin-left: 1%;margin-top: 10px;line-height: 22px;}
+.role_top_menu{padding-left:10px; height: 34px; line-height: 34px;background: url('./main/addnbg.png') repeat-x;}
+.role_div .title,{height: 26px;line-height: 26px;}
+.role_div .son{height: 26px;line-height: 26px;padding-left: 15px;}
+.role_div .title img{vertical-align: middle;}

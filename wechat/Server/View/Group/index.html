@@ -34,8 +34,8 @@
 			<td >{$vo.remark}</td>
 
 			<td align='center'>
-				<a href="{:U('Group/roleSet',array('id'=>$vo['role_id']))}">权限设置</a>
-				| <a href="{:U('Group/edit',array('id'=>$vo['role_id']))}">修改</a>
+				<a href="{:U('Group/roleSet',array('role_id'=>$vo['role_id']))}">权限设置</a>
+				| <a href="{:U('Group/edit',array('role_id'=>$vo['role_id']))}">修改</a>
 				| <a href="javascript:void(0)" onclick="">删除</a>
 			</td>
 		</tr>
