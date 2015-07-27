@@ -52,7 +52,7 @@ class GroupController extends BaseController {
                 {
                     $cat_arr['jiange'] = '';
                 }else{
-                    $cat_arr['jiange'] = '|'.str_repeat('--', $cat_arr['level']);
+                    $cat_arr['jiange'] = str_repeat('|---', $cat_arr['level']-1);
                 }
 
                 if($cat_arr['top_menu_id'] == $top_menu_id)
@@ -73,7 +73,7 @@ class GroupController extends BaseController {
                  $new_cat[$row['pid']][] = $row;
         }
 
-
+//        pp($new_cat);
         //再把它的孩子加进data数组中去
         foreach($data as &$row_arr)
         {

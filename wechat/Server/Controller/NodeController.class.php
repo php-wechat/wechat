@@ -21,7 +21,7 @@ class NodeController extends BaseController {
            {
                $row['jiange'] = '';
            }else{
-               $row['jiange'] = '|'.str_repeat('--', $row['level']);
+               $row['jiange'] = str_repeat('|---', $row['level']-1);
            }
        }
 
@@ -42,7 +42,7 @@ class NodeController extends BaseController {
             {
                 $row['jiange'] = '';
             }else{
-                $row['jiange'] = '|'.str_repeat('--', $row['level']);
+                $row['jiange'] = str_repeat('|---', $row['level']-1);
             }
         }
 
@@ -98,7 +98,7 @@ class NodeController extends BaseController {
                 {
                     $jiange = '';
                 }else{
-                    $jiange = '|'.str_repeat('--', $row['level']);
+                    $jiange = str_repeat('|---', $row['level']-1);
                 }
                 $str .= "<option value='{$row['id']}'>{$jiange}{$row['name']}</option>";
             }

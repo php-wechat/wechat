@@ -37,12 +37,20 @@ class BaseController extends Controller {
 
         $role_auth_ac = explode(',',$role_auth['role_auth_ac']);
 
-        $menu_arr = array('System-index','System-menu','System-main');
-        if(!in_array($vist_ac,$role_auth_ac) && !in_array($vist_ac,$menu_arr))
+        $cat = M('sys_class')->field("concat(blong_c,'-',blong_a) as blong_ca")->select();
+
+
+//      如果在该模块已经创建了，则验证
+        if(in_array($vist_ac,$cat))
         {
-//            pp($vist_ac);
-            $this->error("对不起，你没有权限访问！",U('System/main'));
+            if(!in_array($vist_ac,$role_auth_ac))
+            {
+//              pp($vist_ac);
+                $this->error("对不起，你没有权限访问！",U('System/main'));
+            }
         }
+
+
     }
 
     /**
